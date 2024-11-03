@@ -1,0 +1,104 @@
+Cách Hoạt Động của Giỏ Hàng Tạm
+Khi người dùng thêm sản phẩm vào giỏ hàng:
+
+Mỗi sản phẩm và số lượng được thêm vào bảng GioHang.
+Dữ liệu này liên kết với tài khoản khách hàng thông qua MaKhachHang (hoặc với một phiên đăng nhập nếu khách chưa đăng ký tài khoản).
+Hiển thị danh sách giỏ hàng:
+
+Khi người dùng vào trang giỏ hàng, hệ thống sẽ truy vấn các sản phẩm trong bảng GioHang của họ.
+Khi người dùng đặt hàng:
+
+Các sản phẩm trong giỏ hàng tạm sẽ được chuyển sang đơn hàng chính thức trong bảng DonHang và ChiTietDonHang.
+Sau khi thanh toán, các mục trong GioHang của người dùng sẽ được xóa.
+Xóa giỏ hàng khi người dùng đăng xuất:
+
+Nếu người dùng đăng xuất mà không đặt hàng, có thể tùy chọn xóa giỏ hàng (nếu bạn không cần lưu lâu dài).
+
+
+
+Giải Thích Chi Tiết Các Bảng Trong Hệ Thống Web Bán Hàng
+Dưới đây là giải thích chi tiết về chức năng và vai trò của từng bảng trong hệ thống.
+
+1. Bảng Khách Hàng (KhachHang)
+Mục đích: Quản lý thông tin khách hàng đăng ký và đăng nhập vào hệ thống.
+Các cột chính:
+MaKhachHang: Mã khách hàng (ID duy nhất, tự tăng).
+HoTen: Họ và tên của khách hàng.
+SoDienThoai: Số điện thoại (đảm bảo duy nhất).
+Email: Địa chỉ email (duy nhất, dùng để đăng nhập).
+MatKhau: Mật khẩu đã được hash (để bảo mật).
+DiaChi: Địa chỉ của khách hàng.
+NgayTao: Ngày tạo tài khoản (tự động ghi nhận khi đăng ký).
+Ví dụ:
+Người dùng Nguyễn Văn A đăng ký tài khoản với thông tin cá nhân. Sau khi đăng nhập, người này có thể thêm sản phẩm vào giỏ hàng và đặt hàng.
+
+2. Bảng Sản Phẩm (SanPham)
+Mục đích: Lưu trữ thông tin về các sản phẩm bán trong cửa hàng.
+Các cột chính:
+MaSanPham: Mã sản phẩm (ID duy nhất, tự tăng).
+TenSanPham: Tên sản phẩm (ví dụ: Burger Gà).
+DanhMuc: Danh mục sản phẩm (ví dụ: Burger, Snack).
+Gia: Giá của sản phẩm.
+SoLuongTon: Số lượng sản phẩm còn trong kho.
+MoTa: Mô tả chi tiết về sản phẩm.
+HinhAnh: URL hình ảnh của sản phẩm.
+NgayTao: Ngày sản phẩm được thêm vào hệ thống.
+Ví dụ:
+Sản phẩm Burger Gà có giá 45,000 VND và có 100 cái trong kho.
+
+3. Bảng Giỏ Hàng Tạm (GioHang)
+Mục đích: Lưu trữ các sản phẩm tạm thời mà khách hàng đã thêm vào giỏ hàng nhưng chưa thanh toán.
+Các cột chính:
+MaGioHang: Mã của giỏ hàng (tự tăng).
+MaKhachHang: Mã khách hàng sở hữu giỏ hàng (liên kết với bảng KhachHang).
+MaSanPham: Mã sản phẩm đã được thêm vào giỏ (liên kết với bảng SanPham).
+SoLuong: Số lượng sản phẩm mà khách hàng muốn mua.
+Ví dụ:
+Khách hàng Nguyễn Văn A thêm 2 cái Burger Gà vào giỏ hàng. Dữ liệu này sẽ được lưu trong bảng GioHang.
+
+4. Bảng Đơn Hàng (DonHang)
+Mục đích: Lưu trữ thông tin về các đơn hàng đã được tạo khi khách hàng thanh toán.
+Các cột chính:
+MaDonHang: Mã đơn hàng (tự tăng).
+MaKhachHang: Mã khách hàng đã đặt đơn (liên kết với bảng KhachHang).
+NgayDat: Ngày đặt hàng (tự động ghi nhận).
+TongTien: Tổng tiền của đơn hàng.
+TrangThaiThanhToan: Trạng thái thanh toán của đơn hàng (Chờ thanh toán, Đã thanh toán, Đã huỷ).
+Ví dụ:
+Sau khi khách hàng thanh toán, đơn hàng mới được tạo với tổng tiền là 70,000 VND.
+
+5. Bảng Chi Tiết Đơn Hàng (ChiTietDonHang)
+Mục đích: Ghi nhận thông tin chi tiết về các sản phẩm trong từng đơn hàng.
+Các cột chính:
+MaChiTiet: Mã chi tiết đơn hàng (tự tăng).
+MaDonHang: Mã đơn hàng (liên kết với bảng DonHang).
+MaSanPham: Mã sản phẩm (liên kết với bảng SanPham).
+SoLuong: Số lượng sản phẩm trong đơn hàng.
+GiaTaiThoiDiemMua: Giá của sản phẩm tại thời điểm mua (để tránh ảnh hưởng nếu giá thay đổi sau này).
+Ví dụ:
+Trong đơn hàng của Nguyễn Văn A, có 2 cái Burger Gà với giá mỗi cái là 45,000 VND.
+
+Dòng Chảy Dữ Liệu Giữa Các Bảng
+Đăng ký và Đăng nhập:
+
+Khách hàng đăng ký và thông tin của họ được lưu vào bảng KhachHang.
+Thêm sản phẩm vào giỏ hàng:
+
+Khách hàng chọn sản phẩm và thêm vào giỏ. Thông tin này được lưu trong bảng GioHang.
+Thanh toán và tạo đơn hàng:
+
+Khi khách hàng thanh toán, hệ thống sẽ:
+Tạo một đơn hàng mới trong bảng DonHang.
+Lưu thông tin chi tiết các sản phẩm vào ChiTietDonHang.
+Xóa các sản phẩm tương ứng khỏi giỏ hàng.
+Ví Dụ Thực Tế về Cách Sử Dụng
+Người dùng vào trang sản phẩm: Xem thông tin sản phẩm được lấy từ bảng SanPham.
+
+Người dùng thêm sản phẩm vào giỏ hàng: Dữ liệu được ghi vào bảng GioHang.
+
+Khi thanh toán: Dữ liệu từ giỏ hàng được chuyển sang bảng DonHang và ChiTietDonHang.
+
+Kết Luận
+Hệ thống này giúp bạn quản lý sản phẩm, giỏ hàng, đơn hàng và khách hàng một cách hiệu quả. Các bảng được liên kết với nhau thông qua khóa ngoại, giúp đảm bảo dữ liệu được đồng bộ và dễ dàng quản lý.
+
+Nếu bạn cần thêm tính năng hoặc tối ưu hoá, hãy cho mình biết nhé!

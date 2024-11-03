@@ -1,0 +1,76 @@
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 32px;
+}
+/* Tổng doanh thu */
+.total-revenue {
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+}
+
+.total-revenue h2 {
+    font-size: 24px;
+    color: #cb0c3c;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+input[type="date"], select {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #001241;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content-container {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f3493d;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+.chart-container {
+    width: 50%;
+}
+
+.chart-container canvas {
+    width: 100%;
+}

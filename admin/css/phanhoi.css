@@ -1,0 +1,65 @@
+h1{
+    margin-bottom: 30px;
+  }
+    .container {
+            display: flex;
+            width: 100%;
+        }
+    .table-container {
+            width: 70%;
+            margin-right: 20px;
+        }
+        .detail-container {
+        width: 35%;
+        height: 400px;
+        background-color: white;
+        border: 1px solid #ddd;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        margin-top: 100px;
+    }
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px; /* Khoảng cách giữa các dòng */
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between; /* Căn đều giữa các mục */
+    width: 100%;
+    align-items: center;
+}
+
+.detail-label {
+    font-weight: bold;
+    width: 30%; /* Chiều rộng của nhãn (Tên Khách Hàng, Email,...) */
+}
+
+.detail-value {
+    width: 70%; /* Chiều rộng của giá trị tương ứng */
+    text-align: left;
+}
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #11a38b;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }

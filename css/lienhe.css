@@ -1,0 +1,98 @@
+  /* CSS chung */
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Phần section liên hệ */
+.contact-section {
+    max-width: 800px;
+    margin: 50px auto;
+    margin-top: 5px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 16px;
+    color: #555;
+    margin: 15px 0;
+}
+
+.contact-section h3 {
+    color: #4CAF50;
+    margin-top: 20px;
+    font-size: 20px;
+    font-style: italic;
+}
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Hiệu ứng focus cho các input và textarea */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+    outline: none;
+}
+
+/* Nút gửi liên hệ */
+.contact-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Đáp ứng cho thiết bị di động */
+@media (max-width: 768px) {
+    .contact-section {
+        margin: 20px;
+        padding: 30px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+}

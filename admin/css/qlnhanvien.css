@@ -1,0 +1,182 @@
+body {
+    background-color: #f4f6f9;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+.edit-btn, .delete-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+input {
+    width: 99%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Thêm padding để tạo khoảng cách */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header .search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header input[type="text"] {
+    padding: 12px 15px; /* Căn chỉnh khoảng cách bên trong */
+    border: none;
+    border-radius: 5px;
+    width: 300px; /* Điều chỉnh độ rộng */
+    max-width: 100%;
+    font-size: 14px; /* Chỉnh kích thước font cho giống ảnh */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Đổ bóng bên trong */
+}
+
+.header .search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header button {
+    background-color: #c5e86c; /* Màu giống ảnh */
+    color: black;
+    border: none;
+    padding: 12px 20px; /* Căn chỉnh padding cho phù hợp */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.header button:hover {
+    background-color: #b0d65c;
+}
+
+.header .add-btn {
+    background-color: #007bff; /* Màu nút "Thêm sản phẩm" */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.header .add-btn:hover {
+    background-color: #0056b3;
+}
